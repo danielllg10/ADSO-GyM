@@ -23,7 +23,7 @@
 
         <div class="menu-items">
             <ul class="nav-links">
-                <li><a href="/pag_dashboard">
+                <li><a href="{{route('home')}}">
                     <i class="fa-solid fa-map"></i>
                         <span class="link-name">Dashboard</span>
                     </a></li>
@@ -48,7 +48,7 @@
             <ul class="logout-mode">
                 <li><a href="{{route('login')}}">
                         <i class="uil uil-signout"></i>
-                        <span class="link-name">Salir</span>
+                        <span class="link-name">salir</span>
                     </a></li>
 
                 <li class="mode">
@@ -74,7 +74,17 @@
                 <input type="text" placeholder="Escribe una plabara">
             </div>
 
-            <img src="/img/img_avatar.png" alt="">
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="{{ route('logout') }}"
+                   onclick="event.preventDefault();
+                                 document.getElementById('logout-form').submit();">
+                    {{ __('Logout') }}
+                </a>
+            
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form>
+            </div>
         </div>
 
         <div class="dash-content">
