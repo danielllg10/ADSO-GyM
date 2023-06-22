@@ -35,6 +35,10 @@
                     <i class="fa-brands fa-product-hunt"></i>
                         <span class="link-name">Productos</span>
                     </a></li>
+                <li><a href="/pag_dash_ventas">
+                        <i class="fa-brands fa-product-hunt"></i>
+                            <span class="link-name">Ventas</span>
+                        </a></li>
                 <li><a href="/pag_error404" target="_blank">
                     <i class="fa-sharp fa-solid fa-square-xmark"></i>
                         <span class="link-name">Error 404</span>
