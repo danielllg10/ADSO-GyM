@@ -37,6 +37,9 @@ Route::get('/pag_registro', function () {
 Route::get('/pag_dash_provee', function () {
     return view('/other_views\submenudashboar/pag_dash_provee');
 });
+Route::get('/pag_dash_ventas', function () {
+    return view('/other_views\submenudashboar/pag_dash_ventas');
+});
 Route::get('/pag_dash_productos', function () {
     return view('/other_views\submenudashboar/pag_dash_productos');
 });
