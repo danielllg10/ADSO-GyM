@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductosController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -12,6 +14,37 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+// Rutas del crud inventario:
+
+Route::get('/', function () {
+    return view('auth.login');
+});
+/*
+Route::get('/productos', function(){
+    return view('Productos.index');
+});
+
+Route::get('Productos/create', [ProductosController::class, 'create']);
+*/
+
+Route::resource('productos', ProductosController::class)->middleware('auth');
+Auth::routes(['reset'=>false]);
+
+Route::get('/home', [ProductosController::class, 'index'])->name('home');
+
+
+
+Route::group(['middleware' => 'auth'], function(){
+    Route::get('/', [ProductosController::class, 'index'])->name('home');
+});
+
+//////////////////////////////////////////////////////////////
+
+
+
+
+
 
 Route::get('/', function () {
     return view('index');
